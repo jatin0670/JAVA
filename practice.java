@@ -28,7 +28,7 @@ class practice{
         {7,8,9}
       };
 
-      int[] ans = search(arr, 11);
+      int[] ans = search(arr, 9);
       System.out.println(Arrays.toString(ans));
       
     }
