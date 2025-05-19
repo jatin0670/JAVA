@@ -2,29 +2,31 @@ import java.util.*;
 
 class practice{
 
-      static void Cycle(int[] a){
-        int i=0;
-        while(i<a.length){
-          int cur = a[i]-1;
-          if(a[i]!=a[cur]){
-            swap(a, i, cur);
-          }
-          else{
-             i++;
-          }
-        }
-      }
-
-      static void swap(int[] a, int f, int l){
-        int temp = a[f];
-        a[f] = a[l];
-        a[l] = temp;
-      }
-
       public static void main(String args[]){
      
-        int[] a = {5,4,3,2,1};
-        Cycle(a);
-        System.out.println(Arrays.toString(a));
+      int arr[] = {4,1,2,5,3};
+      cycl(arr);
+      System.out.println(Arrays.toString(arr));
+
+    }
+
+    static void cycl(int[] ar){
+      int i=0;
+      while(i<ar.length){
+           int index = ar[i]-1;
+           if(ar[i]!=ar[index]){
+            swap(ar, i, index);
+           }
+           else{
+            i++;
+           }
+          
+      }
+    }
+
+    static void swap(int[] a, int f, int l){
+      int temp = a[f];
+      a[f] = a[l];
+      a[l] = temp;
     }
 }
