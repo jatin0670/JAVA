@@ -1,17 +1,19 @@
-import java.util.*;
+
 
 class practice{
 
       public static void main(String args[]){
-     
-       String series = "";
-       
-       for(int i=0; i<26; i++){
-        char c = (char)('a' + i);
-        series+= (c+" ");
-       }
+     p5(5);
+    
+    }
 
-       System.out.println(series);
-
+    static void p5(int n){
+        for(int row = 0; row<2*n; row++){
+             int totalcol = row>n ? 2*n-row : row;
+            for(int col = 0; col<totalcol; col++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
 }
