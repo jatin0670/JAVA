@@ -74,10 +74,10 @@ public class LL {
 
     public int delete(int index){
         if(index == 0){
-            deleteFirst();
+            return deleteFirst();
         }
         if(index == size-1){
-            deleteLast();
+            return deleteLast();
         }
 
         Node prev = get(index - 1);
