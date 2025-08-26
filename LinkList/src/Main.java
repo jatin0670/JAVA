@@ -3,11 +3,11 @@
 public class Main {
     public static void main(String[] args) {
 
-//        LL list = new LL();
-//        list.insertFirst(3);
-//        list.insertFirst(5);
-//        list.insertFirst(7);
-//        list.insertFirst(8);
+        LL list = new LL();
+        list.insertFirst(3);
+        list.insertFirst(5);
+        list.insertFirst(7);
+        list.insertFirst(8);
 //        list.insertLast(99);
 //        list.insert(100, 3);
 //        list.display();
@@ -18,6 +18,8 @@ public class Main {
 //        System.out.println(list.delete(2));
 //        list.display();
 //        System.out.println(list.find(5));
+          list.insertRec(20,2);
+          list.display();
 
 
 
@@ -33,14 +35,16 @@ public class Main {
 
 
 
-          CLL list = new CLL();
-          list.insert(3);
-          list.insert(4);
-          list.insert(5);
-          list.insert(6);
-          list.delete(5);
+//          CLL list = new CLL();
+//          list.insert(3);
+//          list.insert(4);
+//          list.insert(5);
+//          list.insert(6);
+//          list.delete(5);
+//
+//          list.display();
 
-          list.display();
+
 
     }
 }
