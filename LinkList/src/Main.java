@@ -18,7 +18,7 @@ public class Main {
 //        System.out.println(list.delete(2));
 //        list.display();
 //        System.out.println(list.find(5));
-          list.insertRec(20,2);
+//          list.insertRec(20,2);
           list.display();
 
 
