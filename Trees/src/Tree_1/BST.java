@@ -23,6 +23,9 @@ public class BST {
 
     private Node root;
 
+    public int height(){
+        return getHeight(root);
+    }
 
     public int getHeight(Node node){
         if(node == null){
