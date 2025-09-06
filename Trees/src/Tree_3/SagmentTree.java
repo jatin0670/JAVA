@@ -8,7 +8,7 @@ public class SagmentTree {
 
 
    public static class Node{
-        int data,
+        int data;
         int sInterval;
         int eInterval;
         Node left;
@@ -46,6 +46,82 @@ public class SagmentTree {
        node.data = node.left.data + node.right.data;
        return  node;
    }
+
+   public void display(){
+       display(this.root);
+   }
+
+   private void display(Node node){
+       String str = "";
+       if(node.left != null){
+           str = str + "Interval = [ " + node.left.sInterval + "-" + node.left.eInterval + " ] Data: " + node.left.data + " => ";
+       }
+       else {
+           str = str + "No left child";
+       }
+
+       //current node
+       str = str + "Interval = [ " + node.sInterval + "-" + node.eInterval + " ] Data: " + node.data + " => ";
+
+       if(node.right != null){
+           str = str + "Interval = [ " + node.right.sInterval + "-" + node.right.eInterval + " ] Data: " + node.right.data;
+       }
+       else {
+           str = str + "No right child ";
+       }
+
+       System.out.println(str + '\n');
+
+       //recursion
+       if(node.left != null){
+           display(node.left);
+       }
+
+       if(node.right != null){
+           display(node.right);
+       }
+
+   }
+
+   public int query(int qsi, int qei){
+       return query(this.root, qsi, qei);
+   }
+
+   private int query(Node node, int qsi, int qei){
+       if(node.sInterval >= qsi && node.eInterval <= qei){
+           // inside
+           return node.data;
+       }
+       else if(node.sInterval > qei || node.eInterval < qsi){
+           // completely outside
+           return 0;
+       }
+       else {
+           return this.query(node.left, qsi, qei) + this.query(node.right, qsi, qei);
+       }
+   }
+
+   // update
+
+    public void update(int index, int val){
+       this.root.data = update(this.root, index, val);
+    }
+
+    private int update(Node node, int index, int val){
+         if(index >= node.sInterval && index <= node.eInterval){
+             if(index == node.sInterval && index == node.eInterval){
+                 return node.data = val;
+             }
+             else{
+                 int leftAns = update(node.left, index, val);
+                 int rightAns = update(node.right, index, val);
+
+                 node.data = leftAns + rightAns;
+                 return node.data;
+             }
+         }
+         return node.data;
+    }
 
 }
 
