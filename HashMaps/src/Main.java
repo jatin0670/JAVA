@@ -84,14 +84,21 @@ public class Main {
 
         // optimized way of custom hashmap
 
-        HashMapFinal<String, String> map = new HashMapFinal<>();
-        map.put("apple" , "red ans sweet");
-        map.put("mango", "yellow and sweet");
-        map.put("banana", "my favourite");
-
+//        HashMapFinal<String, String> map = new HashMapFinal<>();
+//        map.put("apple" , "red ans sweet");
+//        map.put("mango", "yellow and sweet");
+//        map.put("banana", "my favourite");
+//
 //        System.out.println(map.get("apple"));
+//
+//        System.out.println(map);
 
-        System.out.println(map);
+
+
+        // karpRobinAlgo
+
+        KarpRabinAlgo algo = new KarpRabinAlgo();
+        algo.search("hellohowareyou", "how");
 
     }
 }
